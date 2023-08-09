@@ -1,0 +1,52 @@
+-- import: fastn
+-- import: fastn-community.github.io/saturated-sunset-cs
+-- import: portfolio/common
+-- import: portfolio
+export: article-card, h1, h2, h3, image
+
+-- common.site-logo site-logo: $assets.files.assets.ipsum-logo.svg
+
+-- component page:
+caption title:
+optional string document-title:
+optional string document-description:
+optional ftd.raw-image-src document-image: 
+optional boolean show-menu: false
+optional body body:
+optional boolean show-toc: true
+optional ftd.image-src avatar:
+optional string contact-txt:
+optional string contact-url:
+optional boolean $show-wrap: false
+boolean show-footer: $common.show-footer
+ftd.ui list footer:
+optional boolean is-margin: false
+children wrapper:
+ftd.color-scheme colors: $saturated-sunset-cs.main
+
+-- portfolio.page: $page.title
+document-title: $page.document-title
+document-description: $page.document-description
+document-image: $page.document-image
+show-menu: $page.show-menu
+body: $page.body
+colors: $page.colors
+show-toc: $page.show-toc
+avatar: $page.avatar
+contact-txt: $page.contact-txt
+contact-url: $page.contact-url
+show-footer: $page.show-footer
+$show-wrap: $page.show-wrap
+footer: $page.footer
+is-margin: $page.is-margin
+
+-- ftd.column:
+spacing.fixed.em: 0.8
+width: fill-container
+children: $page.wrapper
+
+-- end: ftd.column
+
+-- end: portfolio.page
+
+-- end: page
